@@ -350,7 +350,16 @@ ggplot() +
               alpha = .6) +
   geom_label(data = rcbd_cld_selected,
             aes(x = trtname, y = emmean,
-                label = letter))
+                label = letter),
+            size = 3,
+            label.padding = unit(.1, "lines"))+
+  labs(x = "N rate + K rate (kg/ha)",
+       y = "Yield (kg/ha)")+
+  scale_fill_viridis_d()+
+  scale_color_viridis_d()+
+  theme(legend.position = "none")
+
+ggsave("../output/rcbd_means_jjp.png")
 ```
 
 
